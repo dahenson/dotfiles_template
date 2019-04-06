@@ -3,14 +3,24 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Plugins: {
-    Plug 'tpope/vim-fugitive'
+    Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': { -> coc#util#install() } }
     Plug 'arrufat/vala.vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'vim-airline/vim-airline'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'altercation/vim-colors-solarized'
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+
+    " Appearance
+    Plug 'itchyny/lightline.vim'
+    " Plug 'altercation/vim-colors-solarized'
+    " Plug 'lifepillar/vim-solarized8'
+    Plug 'icymind/NeoSolarized'
+
+    " Python
     Plug 'nvie/vim-flake8'
+
+    " Git
+    Plug 'tpope/vim-fugitive'
 " }
 
 call plug#end()
@@ -18,7 +28,9 @@ call plug#end()
 let mapleader = "," " Remap leader to ','
 syntax on
 syntax enable
-set t_Co=256
+set background=dark
+set termguicolors
+colorscheme NeoSolarized
 
 " General: {
     set number " Show Line Numbers
@@ -50,3 +62,27 @@ set t_Co=256
     set showbreak=↪
 " }
 
+" fzf: {
+    nmap <leader><tab> <plug>(fzf-maps-n)
+    xmap <leader><tab> <plug>(fzf-maps-x)
+    omap <leader><tab> <plug>(fzf-maps-o)
+
+    " Insert mode completion
+    imap <c-x><c-k> <plug>(fzf-complete-word)
+    imap <c-x><c-f> <plug>(fzf-complete-path)
+    imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+    imap <c-x><c-l> <plug>(fzf-complete-line)
+
+    nnoremap <silent> ,t :Files<CR>
+    nnoremap <silent> ,b :Buffers<CR>
+    nnoremap <silent> ,w :Windows<CR>
+" }
+
+" Keymaps: {
+" Make 0 go to the first character rather than the beginning
+" of the line. When we're programming, we're almost always
+" interested in working with text rather than empty space. If
+" you want the traditional beginning of line, use ^
+    nnoremap 0 ^
+    nnoremap ^ 0
+" }
