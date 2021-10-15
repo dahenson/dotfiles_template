@@ -19,6 +19,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'arrufat/vala.vim'
     Plug 'nvie/vim-flake8'
     Plug 'elixir-editors/vim-elixir'
+    " Rails
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'tpope/vim-bundler'
+    Plug 'tpope/vim-rails'
+    Plug 'tpope/vim-rake'
+    Plug 'tpope/vim-rvm'
 
     " Git
     Plug 'tpope/vim-fugitive'
