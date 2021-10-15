@@ -10,7 +10,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
 
     " Appearance
-    Plug 'itchyny/lightline.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'itchyny/lightline.vim'
     " Plug 'altercation/vim-colors-solarized'
     " Plug 'lifepillar/vim-solarized8'
     Plug 'icymind/NeoSolarized'
@@ -33,12 +35,15 @@ call plug#end()
 
 let mapleader = "," " Remap leader to ','
 
-syntax on
-syntax enable
-if has("termguicolors")
-  set termguicolors " enable 24-bit color support if available
-endif
-colorscheme NeoSolarized
+" Appearance: {
+    syntax on
+    syntax enable
+    if has("termguicolors")
+      set termguicolors " enable 24-bit color support if available
+    endif
+    colorscheme NeoSolarized
+    let g:airline_powerline_fonts=1
+" }
 
 " General: {
     set number          " Show Line Numbers
