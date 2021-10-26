@@ -1,7 +1,9 @@
 - clean: ['~']
 - link:
         ~/.gitconfig: gitconfig
-        ~/.zshrc: zshrc
         ~/.tmux.conf: tmux.conf
+        ~/.config/zsh: zsh/.config/zsh
+        ~/.zshenv: zsh/.config/zsh/.zshenv
+        ~/.zprofile: zsh/.config/zsh/.zprofile
         ~/.config/nvim/init.vim: nvimrc
 - shell: []
