@@ -1,3 +1,35 @@
+[alias]
+  # add
+  a = add           # add
+
+  # branch
+  b = branch -v     # branch (verbose)
+
+  # checkout
+  co = checkout     # checkout
+  nb = checkout -b  # create and switch to a new branch
+
+  # commit
+  ci = commit              # commit
+  c = commit -m            # commit with message
+  ca = commit -am          # commit all with message
+  amend = commit --amend   # ammend your last commit
+  ammend = commit --amend  # ammend your last commit
+
+  # pull
+  pl = pull         # pull
+
+  # push
+  ps = push         # push
+
+  # status
+  s = status        # status
+  st = status       # status
+  stat = status     # status
+
+[init]
+  defaultBranch = main
+
 [user]
-	name = Dane Henson
-	email = thegreatdane@gmail.com\n
+  name = Dane Henson
+  email = thegreatdane@gmail.com
