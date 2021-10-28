@@ -8,6 +8,7 @@ source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 
 # Load some plugins
 zcomet load zsh-users/zsh-autosuggestions
+zcomet load ohmyzsh plugins/ssh-agent
 
 # NOTE: source order matters!
 for file in $ZDOTDIR/components/{opts,asdf,fzf,aliases,functions,colors,keybindings,completion,ssh,tmux}.zsh; do
