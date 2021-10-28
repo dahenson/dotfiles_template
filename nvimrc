@@ -12,17 +12,16 @@ call plug#begin('~/.config/nvim/plugged')
     " Appearance
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'morhetz/gruvbox'
     " Plug 'itchyny/lightline.vim'
     " Plug 'altercation/vim-colors-solarized'
     " Plug 'lifepillar/vim-solarized8'
-    Plug 'icymind/NeoSolarized'
+    " Plug 'icymind/NeoSolarized'
 
     " Languages
-    Plug 'arrufat/vala.vim'
-    Plug 'nvie/vim-flake8'
-    Plug 'elixir-editors/vim-elixir'
+    Plug 'sheerun/vim-polyglot'   " All the languages syntaxes!
+
     " Rails
-    Plug 'vim-ruby/vim-ruby'
     Plug 'tpope/vim-bundler'
     Plug 'tpope/vim-rails'
     Plug 'tpope/vim-rake'
@@ -38,10 +37,12 @@ let mapleader = "," " Remap leader to ','
 " Appearance: {
     syntax on
     syntax enable
+
     if has("termguicolors")
       set termguicolors " enable 24-bit color support if available
     endif
-    colorscheme NeoSolarized
+
+    colorscheme gruvbox
     let g:airline_powerline_fonts=1
 " }
 
@@ -80,6 +81,8 @@ let mapleader = "," " Remap leader to ','
 " }
 
 " fzf: {
+    set rtp+=/usr/local/opt/fzf
+
     nmap <leader><tab> <plug>(fzf-maps-n)
     xmap <leader><tab> <plug>(fzf-maps-x)
     omap <leader><tab> <plug>(fzf-maps-o)
