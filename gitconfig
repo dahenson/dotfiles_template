@@ -1,3 +1,11 @@
+[credential "https://github.com"]
+  helper =
+  helper = !/home/linuxbrew/.linuxbrew/Cellar/gh/2.2.0/bin/gh auth git-credential
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [alias]
   # add
   a = add           # add
@@ -26,10 +34,10 @@
   s = status        # status
   st = status       # status
   stat = status     # status
-
 [init]
   defaultBranch = main
-
 [user]
-  name = Dane Henson
   email = thegreatdane@gmail.com
+  name = Dane Henson
+[pull]
+	rebase = false
