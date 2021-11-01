@@ -10,6 +10,10 @@ source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 zcomet load zsh-users/zsh-autosuggestions
 zcomet load ohmyzsh plugins/ssh-agent
 
+if [[ $PLATFORM == "linux" ]]; then
+	[[ -d "/home/linuxbrew/.linuxbrew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # NOTE: source order matters!
 for file in $ZDOTDIR/components/{opts,asdf,fzf,aliases,functions,colors,keybindings,completion,ssh,tmux}.zsh; do
   # shellcheck disable=SC1090
