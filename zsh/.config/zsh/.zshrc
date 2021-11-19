@@ -11,7 +11,9 @@ zcomet load zsh-users/zsh-autosuggestions
 zcomet load ohmyzsh plugins/ssh-agent
 
 if [[ $PLATFORM == "linux" ]]; then
-	[[ -d "/home/linuxbrew/.linuxbrew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  [[ -d "/home/linuxbrew/.linuxbrew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  [[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # NOTE: source order matters!
