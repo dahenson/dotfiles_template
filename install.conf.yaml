@@ -1,4 +1,8 @@
-- clean: ['~', '~/.config']
+- clean:
+  - ~
+  - ~/.config
+  - ~/.config/zsh
+  - ~/.config/nvim
 - create:
   - ~/.config/zsh
   - ~/.config/nvim
@@ -39,3 +43,4 @@
     command: nvim +PlugInstall +qall
     description: Installing neovim plugins
     quiet: true
+
