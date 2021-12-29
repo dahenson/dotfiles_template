@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'preservim/nerdtree'
 
     " Appearance
     Plug 'vim-airline/vim-airline'
@@ -56,7 +57,7 @@ EOF
     set number          " Show Line Numbers
     set visualbell      " Use visual bell instead of beep
     set showmatch       " highlight matching brace
-    set colorcolumn=81  " highlight column 81
+    set colorcolumn=99  " highlight column 99
 
     set hlsearch     " Highlight all search results
     set smartcase    " Enable smart case search
@@ -99,9 +100,9 @@ EOF
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
     imap <c-x><c-l> <plug>(fzf-complete-line)
 
-    nnoremap <silent> ,t :Files<CR>
-    nnoremap <silent> ,b :Buffers<CR>
-    nnoremap <silent> ,w :Windows<CR>
+    nnoremap <silent> <leader>t :Files<CR>
+    nnoremap <silent> <leader>b :Buffers<CR>
+    nnoremap <silent> <leader>w :Windows<CR>
 " }
 
 " Keymaps: {
@@ -111,4 +112,9 @@ EOF
 " you want the traditional beginning of line, use ^
     nnoremap 0 ^
     nnoremap ^ 0
+
+    nnoremap <leader>n :NERDTreeFocus<CR>
+    nnoremap <C-n> :NERDTree<CR>
+    nnoremap <C-t> :NERDTreeToggle<CR>
+    nnoremap <C-f> :NERDTreeFind<CR>
 " }
