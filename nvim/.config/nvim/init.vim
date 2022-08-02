@@ -13,8 +13,9 @@ call plug#begin('~/.config/nvim/plugged')
     " Appearance
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'ishan9299/nvim-solarized-lua'
+    Plug 'ellisonleao/gruvbox.nvim'
     " Plug 'morhetz/gruvbox'
+    " Plug 'ishan9299/nvim-solarized-lua'
     " Plug 'itchyny/lightline.vim'
     " Plug 'altercation/vim-colors-solarized'
     " Plug 'lifepillar/vim-solarized8'
@@ -23,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Languages
     Plug 'sheerun/vim-polyglot'   " All the languages syntaxes!
     Plug 'neovim/nvim-lspconfig'  " Common LSP Configurations
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " Rails
     Plug 'tpope/vim-bundler'
@@ -37,9 +39,9 @@ call plug#end()
 
 let mapleader = "," " Remap leader to ','
 
-lua << EOF
-require'lspconfig'.solargraph.setup{}
-EOF
+" lua << EOF
+" require'lspconfig'.solargraph.setup{}
+" EOF
 
 " Appearance: {
     syntax on
@@ -49,12 +51,18 @@ EOF
       set termguicolors
     endif
 
-    colorscheme solarized
+    set background=dark
+    colorscheme gruvbox
+
     let g:airline_powerline_fonts=1
+    let g:airline_theme='minimalist'
 " }
 
 " General: {
-    set number          " Show Line Numbers
+    set number
+    set relativenumber  " Show Relative Line Numbers
+    set scrolloff=8     " Always try to have 8 lines above or below the cursor
+
     set visualbell      " Use visual bell instead of beep
     set showmatch       " highlight matching brace
     set colorcolumn=99  " highlight column 99
