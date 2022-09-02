@@ -18,8 +18,10 @@ lspconfig.util.default_config = vim.tbl_deep_extend(
   lsp_defaults
 )
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 lspconfig.elixirls.setup({
-  cmd = { '/Users/danehenson/.local/share/dev/language-servers/elixir-ls/language_server.sh' };
+  cmd = { '/home/localhero/.local/share/dev/language-servers/elixir-ls/language_server.sh' };
 })
 
 vim.api.nvim_create_autocmd('User', {

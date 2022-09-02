@@ -1,5 +1,6 @@
 require('user.plugins')
 require('user.language-server')
+require('user.completion')
 
 -- Appearance
 vim.opt.syntax = 'on'
