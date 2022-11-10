@@ -17,7 +17,7 @@ else
 fi
 
 # NOTE: source order matters!
-for file in $ZDOTDIR/components/{opts,asdf,fzf,aliases,functions,colors,keybindings,completion,ssh,tmux}.zsh; do
+for file in $ZDOTDIR/components/{env,opts,asdf,aliases,colors,completion}.zsh; do
   # shellcheck disable=SC1090
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
