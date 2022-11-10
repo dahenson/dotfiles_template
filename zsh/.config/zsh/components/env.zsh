@@ -10,6 +10,9 @@ export SUDO_EDITOR="$EDITOR"
 export GIT_EDITOR="$EDITOR"
 export ALTERNATE_EDITOR="vim"
 
+# starship
+export STARSHIP_LOG="error"
+
 # -- asdf
 # export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # export ASDF_DIR="$HOME/.asdf"
