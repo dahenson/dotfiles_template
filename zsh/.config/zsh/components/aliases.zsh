@@ -1,5 +1,6 @@
 alias go_astro='cd ~/Projects/dscout/dscout/apps/astro && poetry run python -m app.server'
 alias go_dendra='cd ~/Projects/dscout/dscout/apps/dendra && yarn start'
 alias go_puma='cd ~/Projects/dscout/dscout/apps/soma && PORT=3000 bundle exec puma'
+alias go_soma='cd ~/Projects/dscout/dscout/apps/soma && PORT=3000 bundle exec puma'
 alias go_axon='cd ~/Projects/dscout/dscout/apps/axon && PORT=5000 mix phx.server'
-alias go_axon_shell='iex -S mix phx.server'
+alias go_axon_shell='cd ~/Projects/dscout/dscout/apps/axon && iex -S mix phx.server'
