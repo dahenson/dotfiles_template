@@ -14,8 +14,12 @@ require('packer').startup(function(use)
   -- package manager
   use 'wbthomason/packer.nvim'
 
+  -- personal wiki
+  use 'vimwiki/vimwiki'
+
   -- colorscheme
   use 'navarasu/onedark.nvim'
+  use 'dracula/vim'
 
   -- editor navigation and file management
   use 'christoomey/vim-tmux-navigator' -- Navigate between tmux panes
@@ -30,6 +34,7 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
 
   -- language stuff
+  use 'karolbelina/uxntal.vim' -- UXN
   use 'nvim-treesitter/nvim-treesitter'
   use 'sheerun/vim-polyglot'           -- Language syntax highlighting
   use 'neovim/nvim-lspconfig'
@@ -69,7 +74,9 @@ vim.cmd([[
 
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important
-require('telescope').setup {
+local telescope = require('telescope')
+
+telescope.setup {
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
@@ -83,4 +90,4 @@ require('telescope').setup {
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')

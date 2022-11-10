@@ -1,11 +1,11 @@
 require('user.plugins')
-require('user.language-server')
 require('user.completion')
+require('user.language-server')
 
 -- Appearance
 vim.opt.syntax = 'on'
 vim.opt.termguicolors = true
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme dracula')
 
 -- General
 vim.opt.colorcolumn = '120'
@@ -41,13 +41,18 @@ vim.keymap.set('n', '0', '^')
 vim.keymap.set('n', '^', '0')
 
 -- Telescope
+vim.keymap.set('n', '<leader>gf', '<cmd>Telescope git_files<CR>')
 vim.keymap.set('n', '<leader>t', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<leader>lg', '<cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<leader>gs', '<cmd>Telescope grep_string<CR>')
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
 
 -- NERDTree
 vim.keymap.set('n', '<leader>n', '<cmd>NERDTreeFocus<CR>')
 vim.keymap.set('n', '<C-n>', '<cmd>NERDTreeToggle<CR>')
 vim.keymap.set('n', '<C-f>', '<cmd>NERDTreeFind<CR>')
+
+-- vimwiki
+vim.g.vimwiki_list = {{path='~/Projects/dahenson/notes'}}
 
